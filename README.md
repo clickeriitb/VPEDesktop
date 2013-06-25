@@ -9,8 +9,8 @@ Download Links
 ==============
 Visit these to donload a ready to use version . Just uzip and execute the batch/script file present and visit the page.
 
-> [Linux 32 bit] ()
-> [Linux 64 bit] ()
++ [Linux 32 bit] (https://www.dropbox.com/s/5fhyu2nladq2gla/vpe-linux32.tar.gz)
++ [Linux 64 bit] (https://www.dropbox.com/s/w3dfs0kqaou86gg/vpe-linux64.tar.gz)
 
 
 
