@@ -1,7 +1,12 @@
 <%@ page import="org.apache.commons.io.FileUtils,com.iitb.vpeub.Compiler,java.io.FileOutputStream,java.io.*;" %>
 <%
 
-    
+    /**
+        Classes are indentical to the Calsses used for android,
+        except all android specific code is romoved and all the dubug information
+        is being witted in output streams
+        
+    */
     String path = getServletContext().getRealPath("");
     String code = request.getParameter("code");
     String target = request.getParameter("target");
@@ -64,7 +69,7 @@
                     File f = new File(path + File.separator + "build" + File.separator + "final.hex");
                     if(f.exists()) {
                 %>
-                <div class = "form-inline offset1">
+                <div class = "form-inline offset2">
                     
                     <input id="port" type="text" style="height: 40px;width:500px;font-size:20px"></input>
                     <button class="btn btn-primary btn-large" onclick="upload()" type="button">Upload</button>

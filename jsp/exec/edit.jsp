@@ -7,10 +7,16 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <script type="text/javascript" >
             function submitCode(){
-            var form = document.getElementById('formid');
-            form.submit();
-
+                var form = document.getElementById('formid');
+                form.submit();
             }
+            function saveCode(){
+                var form = document.getElementById('formid');
+                form.action = "save.jsp";
+                form.submit();
+            }
+
+
         </script>
     </head>
     <body>
@@ -22,6 +28,9 @@
                 <form id="formid" method="post" action="compile.jsp">
                     <textarea id="code" name="code"style="width: 100%; height: 500px;">
 <%
+    /**
+        Fetch the code and show it in textbox 
+    */
     String path = getServletContext().getRealPath("");
     String code = request.getParameter("code");
     out.write(code);
@@ -29,17 +38,40 @@
                     </textarea>
                 
                 
-                <div class="form-inline offset1">
+                <div class="form-inline offset2">
                     <select id="board" name="target" style="height: 40px;width:500px;font-size:20px">
                         Board
                         <option value="uno">Arduino Uno</option>
                         <option value="atmega328">Arduino Duemilanove w/ ATmega328</option>
                     </select> 
-                    <button  onclick="submitCode()"type="button" class="btn btn-primary btn-large">Compile</button>
+                    
                 </div>
-                
                 <br/>
+</form>
+                <div class="offset4 span2">
+
+                
+                    
+                    
+                    <button  onclick="saveCode()"type="button" class="btn btn-primary btn-block">Save</button>
+                    <br/>
+                    <button  onclick="submitCode()"type="button" class="btn btn-primary btn-block">Compile</button>
+                    <br/>
+                    
+                </div>
+                <form action = "load.jsp" method="post" enctype="multipart/form-data">
+                <br/><br/><br/><br/><br/><br/>
+                <div class="offset3">
+                    <input type="file" name="file" id="file">
+                </div>
+                <br/>
+                <div class="span2 offset4">
+                    <button  type="submit" type="button" class="btn btn-primary btn-block">Load</button>
+                </div>
                 </form>
+                <br/>
+                <br/>
+                
             </div>
         </div>
     <script src="js/jquery.js"></script>
